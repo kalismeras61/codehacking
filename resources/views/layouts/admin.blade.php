@@ -15,7 +15,6 @@
 	<link href="{{asset('css/app.css')}}" rel="stylesheet">
 	
 	<link href="{{asset('css/libs.css')}}" rel="stylesheet">
-
 	
 	
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
