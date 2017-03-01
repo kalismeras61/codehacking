@@ -11,4 +11,12 @@ class Photo extends Model
 
 		'path'
 	];
+
+    protected $uploads = '/images/';
+
+    public function getPathAttribute($photo){
+
+    	return $this->uploads .$photo;
+
+    }
 }

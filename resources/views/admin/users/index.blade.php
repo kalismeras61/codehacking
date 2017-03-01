@@ -2,10 +2,17 @@
 
 @section('content')
 	<h1>Users</h1>
+	@if(session()->has('deleted_user'))
+		
+		<p class="bg-danger">
+			{{session('deleted_user')}}</p>
+		@endif
+
 	<table class="table table-striped">
 	  <thead>
 	    <tr>
 	      <th>#</th>
+	      <th>Resim</th>
 	      <th>İsim</th>
 	      <th>E-mail </th>
 	      <th>Rolü</th>
@@ -20,7 +27,8 @@
 	  @foreach($users as $user)
 	    <tr>
 	      <th scope="row">{{$user->id}}</th>
-	      <td>{{$user->name}}</td>
+	      <td><img  width="50" src="{{$user->photo ? $user->photo->path : '/images/50x50.png'}}" alt=""></td>
+	      <td><a href="{{route('admin.users.edit', $user->id)}}">{{$user->name}}</a></td>
 	      <td>{{$user->email}}</td>
 	      <td>{{$user->role->name}}</td>
 	      <td>{{$user->created_at->diffForHumans()}}</td>
