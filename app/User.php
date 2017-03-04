@@ -36,6 +36,13 @@ class User extends Authenticatable
 		return $this->belongsTo('App\Photo');
 	}
 
+	public function Post(){
+
+
+		return $this->hasMany('App\Post');
+
+	}
+
 /*	public function setPasswordAttribute(){
 
 		if(!empty($password)){
